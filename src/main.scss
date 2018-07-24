@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/components/menu";
+
+$family-sans-serif: "Nunito Sans", "Helvetica", "Arial", sans-serif;
+$title-font-family: "Montserrat", "Nunito Sans", "Helvetica", sans-serif;
+$navbar-height: 6.25rem;
+
+$primary: #10c9c3;
+$link: $primary;
+$navbar-item-active-color: $link;
+
+$gap: 96px;
+$section-padding: 0;
+
+$footer-background-color: #141414;
+$menu-invert-background: $footer-background-color;
+
+@import "bulma";
+
+.title {
+    font-family: $title-font-family;   
+}
+
+.footer {
+    font-family: $family-sans-serif;
+    // color: $white;
+    padding: 6rem 6rem;
+    line-height: 1.65;
+    strong {
+        color: $grey-lighter;
+    }
+}
+
+.menu {
+    &.is-invert {
+      background-color: $menu-invert-background;
+  
+      .menu-label {
+        color: findColorInvert($menu-invert-background);
+      }
+  
+      .menu-list {
+        a {
+          color: findColorInvert($menu-invert-background);
+  
+          &:hover {
+            color: $link;
+            background-color: $menu-invert-background;
+          }
+
+          &.is-active {
+            color: $link;
+            background-color: $menu-invert-background;
+          }
+        }
+      }
+    }
+  }
+
+.gallery-item {
+    position: relative;
+}
+.gallery-item-cover {
+    background-color: hsla(178, 85%, 43%, 0);
+    opacity: 0;
+    transition: background-color 0.5s, opacity 0.5s; 
+    
+    &:hover {
+        background-color: hsla(178, 85%, 43%, 0.8);
+        opacity: 1;
+    }
+
+    & .icon {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+}
+
+.hero {
+    background-image: url('img/hero.jpg');
+    background-size: cover;
+}
+
+#project-details {
+    padding-top: 6rem;
+    padding: 6rem 3rem 6rem 6rem;
+    @include mobile {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    h1.title {
+        font-weight: 500;
+        font-size: 2.2rem;
+        margin-bottom: 1.75rem;
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+#project-navigation {
+    height: 3.25rem;
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-size: 0.9rem;
+    
+    a {
+        color: $grey-darker;
+
+        .icon {
+            vertical-align: -.125rem;
+        }
+
+        &:hover {
+          color: $grey;
+        }
+    }    
+
+}
